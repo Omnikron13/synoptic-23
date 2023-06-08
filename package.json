@@ -1,0 +1,29 @@
+{
+  "name": "synoptic-23",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Omnikron13/synoptic-23.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Omnikron13/synoptic-23/issues"
+  },
+  "homepage": "https://github.com/Omnikron13/synoptic-23#readme",
+  "dependencies": {
+    "@react-google-maps/api": "^2.18.1",
+    "next": "^13.4.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.63.2"
+  }
+}
