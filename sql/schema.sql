@@ -18,7 +18,7 @@ CREATE OR REPLACE FUNCTION not_blank(c char) RETURNS boolean
 
 
 -- Tabula rasa
-DROP TABLE IF EXISTS locations;
+DROP TABLE IF EXISTS locations CASCADE;
 
 
 -- Table of locations/shops
@@ -42,6 +42,34 @@ CREATE TABLE IF NOT EXISTS locations(
       DOUBLE PRECISION
       NOT NULL
       CHECK(long BETWEEN -180 AND 180)
+);
+
+
+-- Table of opening/availability hours
+CREATE TABLE IF NOT EXISTS times(
+   id INTEGER PRIMARY KEY,
+   location
+      INTEGER
+      NOT NULL
+      REFERENCES locations
+         ON UPDATE CASCADE
+         ON DELETE CASCADE
+   ,
+   day
+      SMALLINT
+      NOT NULL
+      CHECK(day BETWEEN 0 AND 6)
+   ,
+   open
+      TIME
+      NOT NULL
+   ,
+   close
+      TIME
+      NOT NULL
+      CHECK(close > open)
+   ,
+   UNIQUE(location, day)
 );
 
 
