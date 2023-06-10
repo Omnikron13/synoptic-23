@@ -5,6 +5,7 @@ export const metadata = {
 };
 
 
+// TOOO: relocate this, if used at all, to a common location
 function Location({ props }) {
    return(
       <div>
