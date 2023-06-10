@@ -30,6 +30,7 @@ CREATE OR REPLACE FUNCTION dow_name(i INTEGER) RETURNS text
 -- Tabula rasa
 DROP TABLE IF EXISTS locations CASCADE;
 DROP TABLE IF EXISTS times CASCADE;
+DROP TABLE IF EXISTS food_types CASCADE;
 
 
 -- Table of locations/shops
@@ -81,6 +82,29 @@ CREATE TABLE IF NOT EXISTS times(
       CHECK(close > open)
    ,
    UNIQUE(location, day)
+);
+
+
+-- Table of food types, e.g. 'Fresh Vegetables', 'Canned Goods', 'Halal', 'Vegan', etc.
+CREATE TABLE IF NOT EXISTS food_types(
+   -- TODO: perhaps id this with a string instead?
+   id SERIAL PRIMARY KEY,
+   name
+      TEXT
+      UNIQUE
+      NOT NULL
+      CHECK(not_blank(name))
+   ,
+   description
+      TEXT
+   ,
+   -- TODO: reconsider this..?
+   classes
+      TEXT[]
+      NOT NULL
+      -- TODO: overload not_blank() to handle arrays
+      --CHECK(not_blank(classes))
+   -- TODO: perhaps add an icon or some such?
 );
 
 
