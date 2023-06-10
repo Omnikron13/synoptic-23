@@ -19,6 +19,7 @@ CREATE OR REPLACE FUNCTION not_blank(c char) RETURNS boolean
 
 -- Tabula rasa
 DROP TABLE IF EXISTS locations CASCADE;
+DROP TABLE IF EXISTS times CASCADE;
 
 
 -- Table of locations/shops
