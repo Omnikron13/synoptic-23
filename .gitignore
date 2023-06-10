@@ -1,4 +1,4 @@
-# We dont't really care about specifc versions of node_modules
+# We don't really care about dependency versions
 package-lock.json
 
 # Logs
