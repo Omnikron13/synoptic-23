@@ -1,3 +1,6 @@
+# We don't really care about dependency versions
+package-lock.json
+
 # Logs
 logs
 *.log
