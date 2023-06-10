@@ -9,7 +9,7 @@ export const metadata = {
 // TOOO: relocate this, if used at all, to a common location...
 async function Location({ name, description, lat, long, times }) {
    return(
-      <div class='location'>
+      <div className='location'>
          <h2>{name} ({lat}, {long})</h2>
          {description ?
             <p>{description}</p>
