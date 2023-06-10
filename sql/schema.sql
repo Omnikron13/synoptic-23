@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS locations CASCADE;
 
 -- Table of locations/shops
 CREATE TABLE IF NOT EXISTS locations(
-   id INTEGER PRIMARY KEY,
+   id SERIAL PRIMARY KEY,
    name
       VARCHAR(255)
       UNIQUE
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS locations(
 
 -- Table of opening/availability hours
 CREATE TABLE IF NOT EXISTS times(
-   id INTEGER PRIMARY KEY,
+   id SERIAL PRIMARY KEY,
    location
       INTEGER
       NOT NULL
