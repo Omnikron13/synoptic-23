@@ -17,6 +17,16 @@ CREATE OR REPLACE FUNCTION not_blank(c char) RETURNS boolean
 ;
 
 
+-- Translate day-of-week numbers (e.g. from EXTRACT(DOW FROM ...) to names
+CREATE OR REPLACE FUNCTION dow_name(i INTEGER) RETURNS text
+   AS $$ SELECT ('{Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday}'::text[])[i + 1] $$
+   LANGUAGE SQL
+   STRICT
+   IMMUTABLE
+   PARALLEL SAFE
+;
+
+
 -- Tabula rasa
 DROP TABLE IF EXISTS locations CASCADE;
 DROP TABLE IF EXISTS times CASCADE;
