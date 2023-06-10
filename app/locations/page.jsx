@@ -14,7 +14,9 @@ async function Location({ name, description, lat, long, times }) {
          {description ?
             <p>{description}</p>
             :<></>}
-         <Times times={times} />
+         {times.length > 0 ?
+            <Times times={times} />
+            :<></>}
       </div>
    );
 }
@@ -23,9 +25,6 @@ async function Location({ name, description, lat, long, times }) {
 async function Times({ times }) {
    // TODO: offload this properly elsewhere...
    const days = { 0: 'Sun', 1: 'Mon', 2: 'Tue', 3: 'Wed', 4: 'Thu', 5: 'Fri', 6:'Sat' };
-
-   if(times.length == 0)
-      return <></>;
 
    return <>
       <h3>Times</h3>
