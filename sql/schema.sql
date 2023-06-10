@@ -84,5 +84,26 @@ CREATE TABLE IF NOT EXISTS times(
 );
 
 
+-- Table of food types, e.g. 'Fresh Vegetables', 'Canned Goods', 'Halal', 'Vegan', etc.
+CREATE TABLE IF NOT EXISTS food_types(
+   id SERIAL PRIMARY KEY,
+   name
+      TEXT
+      UNIQUE
+      NOT NULL
+      CHECK(not_blank(name))
+   ,
+   description
+      TEXT
+   ,
+   -- TODO: reconsider this..?
+   class
+      TEXT
+      NOT NULL
+      CHECK(not_blank(class))
+   -- TODO: perhaps add an icon or some such?
+);
+
+
 COMMIT;
 
