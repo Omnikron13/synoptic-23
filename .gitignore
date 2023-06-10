@@ -1,3 +1,6 @@
+# We dont't really care about specifc versions of node_modules
+package-lock.json
+
 # Logs
 logs
 *.log
