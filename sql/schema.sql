@@ -99,10 +99,11 @@ CREATE TABLE IF NOT EXISTS food_types(
       TEXT
    ,
    -- TODO: reconsider this..?
-   class
-      TEXT
+   classes
+      TEXT[]
       NOT NULL
-      CHECK(not_blank(class))
+      -- TODO: overload not_blank() to handle arrays
+      --CHECK(not_blank(classes))
    -- TODO: perhaps add an icon or some such?
 );
 
