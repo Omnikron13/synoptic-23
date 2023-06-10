@@ -8,7 +8,7 @@ SET search_path TO public;
 
 -- Function checking for (functionally) empty strings in constraints, useful to validate names, etc.
 CREATE OR REPLACE FUNCTION not_blank(c char) RETURNS boolean
-   AS 'SELECT LENGTH(TRIM(COALESCE(c, ''''))) > 0'
+   AS $$ SELECT LENGTH(TRIM(COALESCE(c, ''''))) > 0 $$
    LANGUAGE SQL
    IMMUTABLE
    LEAKPROOF
