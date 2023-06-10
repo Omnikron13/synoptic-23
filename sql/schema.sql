@@ -86,6 +86,7 @@ CREATE TABLE IF NOT EXISTS times(
 
 -- Table of food types, e.g. 'Fresh Vegetables', 'Canned Goods', 'Halal', 'Vegan', etc.
 CREATE TABLE IF NOT EXISTS food_types(
+   -- TODO: perhaps id this with a string instead?
    id SERIAL PRIMARY KEY,
    name
       TEXT
