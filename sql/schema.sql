@@ -30,6 +30,7 @@ CREATE OR REPLACE FUNCTION dow_name(i INTEGER) RETURNS text
 -- Tabula rasa
 DROP TABLE IF EXISTS locations CASCADE;
 DROP TABLE IF EXISTS times CASCADE;
+DROP TABLE IF EXISTS food_types CASCADE;
 
 
 -- Table of locations/shops
