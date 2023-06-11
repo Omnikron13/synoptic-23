@@ -7,33 +7,43 @@ export const metadata = {
 
 
 // TOOO: relocate this, if used at all, to a common location...
-async function Location({ name, description, lat, long, times }) {
+async function Location({ name, description, coords, times, food_types }) {
    return(
       <div className='location'>
-         <h2>{name} ({lat}, {long})</h2>
+         <h2>{name} ({coords.lat}, {coords.lng})</h2>
          {description ?
             <p>{description}</p>
             :<></>}
-         {times.length > 0 ?
-            <Times times={times} />
-            :<></>}
+         <Times times={times} />
+         <FoodTypes food_types={food_types} />
       </div>
    );
 }
 
 
 async function Times({ times }) {
-   // TODO: offload this properly elsewhere...
-   const days = { 0: 'Sun', 1: 'Mon', 2: 'Tue', 3: 'Wed', 4: 'Thu', 5: 'Fri', 6:'Sat' };
+   return times ?
+      <>
+         <h3>Times</h3>
+         <ol>
+            {times.map(t =>
+               <li key={t.day}>{t.day} - {t.open} - {t.close}</li>
+            )}
+         </ol>
+      </>
+      : <></>;
+}
 
-   return <>
-      <h3>Times</h3>
-      <ol>
-         {times.map(t =>
-            <li>{days[t.day]} - {t.open} - {t.close}</li>
-         )}
-      </ol>
-   </>;
+
+function FoodTypes({ food_types }) {
+   return food_types ?
+      <>
+         <h3>Food Types</h3>
+         <ul>
+            {food_types.map(ft => <li key={ft.id}>{ft.name} : {ft.description}</li>)}
+         </ul>
+      </>
+      : <></>;
 }
 
 
@@ -43,13 +53,7 @@ export default async function Page() {
    return <>
       <h1>Locations</h1>
       {locs.map(l =>
-         <Location
-            name={l.name}
-            description={l.description}
-            lat={l.lat}
-            long={l.long}
-            times={l.times}
-         />
+         <Location {...l} />
       )}
    </>;
 }
