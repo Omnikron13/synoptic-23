@@ -12,7 +12,7 @@ const containerStyle = {
    height: '40rem'
 };
 
-function Map({ lat, lng }) {
+function Map({ points }) {
    const { isLoaded } = useJsApiLoader({
       id: 'google-map-script',
       googleMapsApiKey: 'AIzaSyCXhK5ERNDL42X1HnIj8gFgMeNr0iKERiI',
@@ -36,14 +36,15 @@ function Map({ lat, lng }) {
       setMap(null)
    }, []);
 
+
    return isLoaded ? (
       <GoogleMap
          mapContainerStyle={containerStyle} // TODO: style this properly with CSS
          onLoad={onLoad}
          onUnmount={onUnmount}
       >
-         { /* TODO: would set actual markers, etc. here */ }
-         <Marker position={{lat, lng}} />
+         {/* TODO: better markers and shit, probably in their own component, should go here */}
+         {points.map(p => <Marker position={p} />)}
       </GoogleMap>
    ) : <></>
 }
