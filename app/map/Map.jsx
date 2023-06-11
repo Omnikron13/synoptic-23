@@ -39,8 +39,6 @@ function Map({ lat, lng }) {
    return isLoaded ? (
       <GoogleMap
          mapContainerStyle={containerStyle} // TODO: style this properly with CSS
-         center={{lat, lng}}
-         zoom={9}
          onLoad={onLoad}
          onUnmount={onUnmount}
       >
