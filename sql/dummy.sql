@@ -41,3 +41,13 @@ INSERT INTO food_types (name, description, classes) VALUES
    -- TODO: perhaps add additional umbrella classes? 'religious', 'restriction', etc..?
    ('Halal', 'Halal-certified food items', ARRAY['halal','dietary']),
    ('Vegan', 'Plant-based food items', ARRAY['vegan','dietary']);
+
+
+-- Dummy data attaching rough food type labels to locations/shops
+INSERT INTO location_food_types (location, food_type) VALUES
+   (1, 1),
+   (1, 4),
+   (2, 1),
+   (3, 3),
+   (4, 1),
+   (4, 3);
