@@ -31,6 +31,7 @@ CREATE OR REPLACE FUNCTION dow_name(i INTEGER) RETURNS text
 DROP TABLE IF EXISTS locations CASCADE;
 DROP TABLE IF EXISTS times CASCADE;
 DROP TABLE IF EXISTS food_types CASCADE;
+DROP TABLE IF EXISTS location_food_types CASCADE;
 
 
 -- Table of locations/shops
@@ -105,6 +106,26 @@ CREATE TABLE IF NOT EXISTS food_types(
       -- TODO: overload not_blank() to handle arrays
       --CHECK(not_blank(classes))
    -- TODO: perhaps add an icon or some such?
+);
+
+
+-- General overiew of the types/categories of food usually available (surplus/clearance) at a location
+CREATE TABLE IF NOT EXISTS location_food_types(
+   location
+      INTEGER
+      NOT NULL
+      REFERENCES locations
+         ON UPDATE CASCADE
+         ON DELETE CASCADE
+   ,
+   food_type
+      INTEGER
+      NOT NULL
+      REFERENCES food_types
+         ON UPDATE CASCADE
+         ON DELETE CASCADE
+   ,
+   PRIMARY KEY(location, food_type)
 );
 
 
