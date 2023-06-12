@@ -7,7 +7,7 @@ SET search_path TO public;
 
 
 -- Add a case-insensitive collation
-CREATE COLLATION en_gb_nocase (provider = icu, locale = 'en-GB-u-ks-level1', deterministic = false);
+CREATE COLLATION IF NOT EXISTS en_gb_nocase (provider = icu, locale = 'en-GB-u-ks-level1', deterministic = false);
 
 
 -- Function checking for (functionally) empty strings in constraints, useful to validate names, etc.
