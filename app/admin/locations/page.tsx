@@ -22,9 +22,10 @@ export default function Page() {
                <p className={classnames('description', styles.description)}>{loc.description}</p>
 
                <p className={classnames('coords', 'h-geo', styles.coords)}>
-                  <data className='p-latitude'  value={loc.coords.lat}>{loc.coords.lat}</data>
-                  <data className='p-longitude' value={loc.coords.lng}>{loc.coords.lng}</data>
-                  {/* TODO: also add a 'geo:' protocol anchor? */}
+                  <a href={`geo:${loc.coords.lat},${loc.coords.lng}`}>
+                     <data className='p-latitude'  value={loc.coords.lat}>{loc.coords.lat}</data>
+                     <data className='p-longitude' value={loc.coords.lng}>{loc.coords.lng}</data>
+                  </a>
                </p>
 
                <ol className={classnames('timesList', styles.timesList)}>
