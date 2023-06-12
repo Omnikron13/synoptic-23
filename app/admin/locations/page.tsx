@@ -5,6 +5,8 @@ import { getAll as getAllLocations } from 'Location';
 // JSON5 claims to fully mimic the JSON API, so in _theory_ it should be ok to shadow it
 const JSON = await import('json5');
 
+import styles from './admin.locations.module.scss';
+
 const locs = await getAllLocations();
 
 export default function Page() {
@@ -13,21 +15,21 @@ export default function Page() {
    return(
       <>
          <h2>Locations</h2>
-         <ul>
-            <li className='location'>
+         <ul className={classnames(styles.locationsList)}>
+            <li className={classnames('location', styles.location)}>
                <h3 className='name'>{loc.name}</h3>
 
                <p className='description'>{loc.description}</p>
 
-               <p className='h-geo coords'>
+               <p className={classnames('coords', 'h-geo', styles.coords)}>
                   <data className='p-latitude'  value={loc.coords.lat}>{loc.coords.lat}</data>
                   <data className='p-longitude' value={loc.coords.lng}>{loc.coords.lng}</data>
                   {/* TODO: also add a 'geo:' protocol anchor? */}
                </p>
 
-               <ol className='times'>
+               <ol className={classnames('timesList', styles.timesList)}>
                   <h3>Times</h3>
-                  <li className='time' key={loc.times[0].day}>
+                  <li className={classnames('times', styles.times)} key={loc.times[0].day}>
                      {['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][loc.times[0].day]}
                      {loc.times[0].open}
                      {loc.times[0].close}
@@ -39,7 +41,7 @@ export default function Page() {
                   <li key={loc.times[5].day}>{['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][loc.times[5].day]} - {loc.times[5].open} - {loc.times[5].close}</li>
                </ol>
 
-               <ul className='foodTypes'>
+               <ul className={classnames('foodTypesList', styles.foodTypesList)}>
                   <h3>Food types/categories</h3>
                   <li className={classnames('foodType', loc.food_types[0].id, loc.food_types[0].meta?.classes)}>
                      <h4 className='name'>{loc.food_types[0].name} [{loc.food_types[0].id}]</h4>
