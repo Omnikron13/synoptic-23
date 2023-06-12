@@ -10,7 +10,7 @@ function construct(obj): FoodType {
    };
 }
 
-export async function get(id: number) {
+export async function get(id: string) {
    const res = await db.query('SELECT * FROM food_types WHERE id = $1', [id]);
    // TODO: error handling
    return construct(res.rows[0]);
