@@ -79,6 +79,7 @@ function LocationComponent({ id, name, description, coords }) {
 }
 
 
+// h-geo microformat, see: http://microformats.org/wiki/h-geo
 function HGeoComponent({ lat, lng }) {
    const nf = new Intl.NumberFormat('en-GB', {
       // Supposedly accurate to ~1.11m (dropping to 4dp is apparently ~11.1m)
