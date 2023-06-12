@@ -17,9 +17,9 @@ export default function Page() {
          <h2>Locations</h2>
          <ul className={classnames(styles.locationsList)}>
             <li className={classnames('location', styles.location)}>
-               <h3 className='name'>{loc.name}</h3>
+               <h3 className={classnames('name', styles.name)}>{loc.name}</h3>
 
-               <p className='description'>{loc.description}</p>
+               <p className={classnames('description', styles.description)}>{loc.description}</p>
 
                <p className={classnames('coords', 'h-geo', styles.coords)}>
                   <data className='p-latitude'  value={loc.coords.lat}>{loc.coords.lat}</data>
@@ -43,11 +43,11 @@ export default function Page() {
 
                <ul className={classnames('foodTypesList', styles.foodTypesList)}>
                   <h3>Food types/categories</h3>
-                  <li className={classnames('foodType', loc.food_types[0].id, loc.food_types[0].meta?.classes)}>
+                  <li className={classnames('foodType', styles.foodType, loc.food_types[0].id, loc.food_types[0].meta?.classes)}>
                      <h4 className='name'>{loc.food_types[0].name} [{loc.food_types[0].id}]</h4>
                      <p className='description'>{loc.food_types[0].description}</p>
                   </li>
-                  <li className={classnames('foodType', loc.food_types[1].id, loc.food_types[1].meta?.classes)}>
+                  <li className={classnames('foodType', styles.foodType, loc.food_types[1].id, loc.food_types[1].meta?.classes)}>
                      <h4 className='name'>{loc.food_types[1].name} [{loc.food_types[1].id}]</h4>
                      <p className='description'>{loc.food_types[1].description}</p>
                   </li>
