@@ -40,7 +40,7 @@ INSERT INTO food_types (id, name, description, meta) VALUES
    ('canned', 'Canned Goods', 'Canned food items', '{}'),
    -- TODO: perhaps add additional umbrella classes? 'religious', 'restriction', etc..?
    ('halal', 'Halal', 'Halal-certified food items', '{}'),
-   ('vegan', 'Vegan', 'Plant-based food items', '{"class":"dietary"}');
+   ('vegan', 'Vegan', 'Plant-based food items', '{"classes":["dietary"]}');
 
 
 -- Dummy data attaching rough food type labels to locations/shops
