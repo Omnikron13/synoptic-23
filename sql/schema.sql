@@ -6,6 +6,10 @@ CREATE SCHEMA IF NOT EXISTS public;
 SET search_path TO public;
 
 
+-- Add a case-insensitive collation
+CREATE COLLATION en_gb_nocase (provider = icu, locale = 'en-GB-u-ks-level1', deterministic = false);
+
+
 -- Function checking for (functionally) empty strings in constraints, useful to validate names, etc.
 CREATE OR REPLACE FUNCTION not_blank(c char) RETURNS boolean
    AS $$ SELECT LENGTH(TRIM(COALESCE(c, ''''))) > 0 $$
