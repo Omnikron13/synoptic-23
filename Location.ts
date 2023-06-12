@@ -1,6 +1,8 @@
 import db from '/db.js';
+import FoodType from '/FoodType.tsx';
 
 async function construct(obj: Location): Promise<Location> {
+   obj.food_types = obj.food_types.map(ft => new FoodType(ft));
    return obj;
 }
 
