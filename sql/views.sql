@@ -23,22 +23,22 @@ WITH
       GROUP BY location
       ORDER BY location
    )
-   SELECT
-      id,
-      name,
-      description,
-      json_build_object('lat', lat, 'lng', long)
-         AS coords,
-      times_agg.json
-         AS times,
-      food_type_agg.json
-         AS food_types
-   FROM locations
-   LEFT JOIN times_agg
-      ON locations.id = times_agg.location
-   LEFT JOIN food_type_agg
-      ON locations.id = food_type_agg.location
-   ORDeR BY id
-      ASC
+SELECT
+   id,
+   name,
+   description,
+   json_build_object('lat', lat, 'lng', long)
+      AS coords,
+   times_agg.json
+      AS times,
+   food_type_agg.json
+      AS food_types
+FROM locations
+LEFT JOIN times_agg
+   ON locations.id = times_agg.location
+LEFT JOIN food_type_agg
+   ON locations.id = food_type_agg.location
+ORDeR BY id
+   ASC
 ;
 
