@@ -64,6 +64,26 @@
    }
 }
 
+.time {
+   //border:1px solid silver;
+   display: flex;
+   flex-direction: row;
+   gap: 0.5rem;
+   justify-content: end;
+
+   & .range {
+   }
+   & .day {
+      //border: 1px solid aquamarine;
+   }
+   & .open {
+      //border: 1px solid burlywood;
+   }
+   & .close {
+      //border: 1px solid blueviolet;
+   }
+}
+
 .foodTypesList {
    background-color: #123;
    display: flex;
