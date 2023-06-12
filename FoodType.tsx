@@ -16,7 +16,7 @@ export async function get(id: string) : Promise<FoodType> {
    return construct(res.rows[0]);
 }
 
-export async function getAll(): Promise<FoodType[]> {
+export async function getAll() : Promise<FoodType[]> {
    const res = await db.query('SELECT * FROM food_types');
    return res.rows.map(ft => construct(ft));
 }
