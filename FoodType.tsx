@@ -21,9 +21,9 @@ export async function getAll() : Promise<FoodType[]> {
    return res.rows.map(ft => construct(ft));
 }
 
-export function FoodType({ name, description, classes }) {
+export function detailsComponent({ id, name, description, meta }) {
    return (
-      <details className={classnames('foodType', classes)}>
+      <details className={classnames('foodType', id, meta?.classes)}>
          <summary>{name}</summary>
          <p>{description}</p>
       </details>
