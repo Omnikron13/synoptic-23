@@ -1,5 +1,5 @@
 import db from '/db.js';
-import * as model from '/Location.ts';
+import * as model from '/Location.tsx';
 
 export const metadata = {
    title: 'Locations Page Title',

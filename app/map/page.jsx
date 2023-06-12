@@ -1,5 +1,5 @@
 import Map from './Map.jsx';
-import * as Location from '/Location.ts';
+import * as Location from '/Location.tsx';
 
 export const metadata = {
    title: 'Map Page Title',
