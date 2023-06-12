@@ -40,7 +40,7 @@ function FoodTypes({ food_types }) {
       <>
          <h3>Food Types</h3>
          <ul>
-            {food_types.map(ft => <li key={ft.id}>{ft.name} : {ft.description}</li>)}
+            {food_types.map(ft => <li key={ft.id}><ft.detailsComponent /></li>)}
          </ul>
       </>
       : <></>;
