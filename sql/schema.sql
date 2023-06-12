@@ -64,7 +64,6 @@ CREATE TABLE IF NOT EXISTS locations(
 
 -- Table of opening/availability hours
 CREATE TABLE IF NOT EXISTS times(
-   id SERIAL PRIMARY KEY,
    location
       INTEGER
       NOT NULL
@@ -86,7 +85,7 @@ CREATE TABLE IF NOT EXISTS times(
       NOT NULL
       CHECK(close > open)
    ,
-   UNIQUE(location, day)
+   PRIMARY KEY(location, day)
 );
 
 
