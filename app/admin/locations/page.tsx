@@ -63,12 +63,14 @@ export default function Page() {
 }
 
 
-function LocationComponent({ id, name, description }) {
+function LocationComponent({ id, name, description, coords }) {
    return(
-      <li className='location'>
-         <h3 className='name'>{name}</h3>
+      <li className={classnames('location', styles.location)}>
+         <h3 className={classnames('name', styles.name)}>{name}</h3>
 
-         <p className='description'>{description}</p>
+         <p className={classnames('description', styles.description)}>{description}</p>
+
+         <HGeoComponent {...coords} />
 
          {/* TODO: fill out coords, times, food_types components */}
       </li>
