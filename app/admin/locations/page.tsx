@@ -64,7 +64,7 @@ export default function Page() {
 }
 
 
-function LocationComponent({ id, name, description, coords }) {
+function LocationComponent({ id, name, description, coords, times }) {
    return(
       <li className={classnames('location', styles.location)}>
          <h3 className={classnames('name', styles.name)}>{name}</h3>
@@ -73,7 +73,9 @@ function LocationComponent({ id, name, description, coords }) {
 
          <HGeoComponent {...coords} />
 
-         {/* TODO: fill out coords, times, food_types components */}
+         <TimesListComponent times={times} />
+
+         {/* TODO: fill out food_types components */}
       </li>
    );
 }
@@ -97,9 +99,29 @@ function HGeoComponent({ lat, lng }) {
 }
 
 
-// TODO: TimesListComponent
+function TimesListComponent({ times }) {
+   return(
+      <ol className={classnames('timesList', styles.timesList)}>
+         <h3>Times</h3>
+         {times.map(t => <TimeComponent key={t.day} {...t} />)}
+      </ol>
+   );
+}
 
-// TODO: TimesComponent
+
+function TimeComponent({ day, open, close }) {
+   // TODO: generate the human-readable times in a less fragile way
+   return(
+      <li className={classnames('time', styles.time)}>
+         <span className={styles.day}>{['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][day]}</span>
+         <span className={classnames('range', styles.range)}>
+            <time className={styles.open} datetime={open}>{open.slice(0, -3)}</time>
+            <span className={styles.dash}>&mdash;</span>
+            <time className={styles.close} datetime={close}>{close.slice(0, -3)}</time>
+         </span>
+      </li>
+   );
+}
 
 // TODO: FoodTypeListComponent
 
