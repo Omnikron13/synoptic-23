@@ -27,7 +27,7 @@ async function Times({ times }) {
          <h3>Times</h3>
          <ol>
             {times.map(t =>
-               <li key={t.day}>{t.day} - {t.open} - {t.close}</li>
+               <li key={t.day}>{['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][t.day]} - {t.open} - {t.close}</li>
             )}
          </ol>
       </>
