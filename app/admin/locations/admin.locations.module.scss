@@ -7,9 +7,62 @@
 
 .location {
    border: 1px solid #444;
+   display: grid;
+   gap: 0.25rem;
+   grid-template-areas:
+      'header header header'
+      'left_t centre  right'
+      'left_m centre  right'
+      'left_b centre  right';
+   grid-template-columns: 1fr 2fr max-content;
+   grid-template-rows: min-content min-content 1fr min-content;
+   justify-items: stretch;
 
    & > h3, p {
       margin: 0;
    }
+
+   & > * {
+   }
 }
 
+.name {
+   background-color: #323;
+   grid-area: header;
+}
+
+.description {
+   background-color: #231;
+   grid-area: left_m;
+}
+
+.coords {
+   background-color: #213;
+   grid-area: left_t;
+}
+
+.timesList {
+   background-color: #321;
+   grid-area: right;
+
+   & > h3 {
+      margin: 0;
+   }
+}
+
+.foodTypesList {
+   background-color: #123;
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+   grid-area: centre;
+   wrap: wrap;
+
+   & > h3 {
+      display: none;
+   }
+
+   & .foodType > h4 {
+      margin: 0;
+   }
+}
