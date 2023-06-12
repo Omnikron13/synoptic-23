@@ -5,7 +5,7 @@ WITH
    times_agg AS (
       SELECT
          location,
-         json_agg(json_build_object('day', dow_name(day), 'open', open, 'close', close))
+         json_agg(row_to_json(times)::jsonb - 'location')
             AS json
       FROM times
       GROUP BY location
