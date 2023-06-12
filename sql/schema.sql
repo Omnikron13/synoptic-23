@@ -92,8 +92,13 @@ CREATE TABLE IF NOT EXISTS times(
 
 -- Table of food types, e.g. 'Fresh Vegetables', 'Canned Goods', 'Halal', 'Vegan', etc.
 CREATE TABLE IF NOT EXISTS food_types(
-   -- TODO: perhaps id this with a string instead?
-   id SERIAL PRIMARY KEY,
+   id
+      TEXT
+      PRIMARY KEY
+      -- Apparently setting a case insensitive collation breaks regex, including SIMILAR TO...
+      --COLLATE en_gb_nocase
+      CHECK(id SIMILAR TO '[a-z0-9_-]{3,32}')
+   ,
    name
       TEXT
       UNIQUE
@@ -103,13 +108,10 @@ CREATE TABLE IF NOT EXISTS food_types(
    description
       TEXT
    ,
-   -- TODO: reconsider this..?
-   classes
-      TEXT[]
+   meta
+      JSONB
       NOT NULL
-      -- TODO: overload not_blank() to handle arrays
-      --CHECK(not_blank(classes))
-   -- TODO: perhaps add an icon or some such?
+      DEFAULT '{}'
 );
 
 
@@ -123,7 +125,7 @@ CREATE TABLE IF NOT EXISTS location_food_types(
          ON DELETE CASCADE
    ,
    food_type
-      INTEGER
+      TEXT
       NOT NULL
       REFERENCES food_types
          ON UPDATE CASCADE

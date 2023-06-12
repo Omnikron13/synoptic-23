@@ -35,19 +35,19 @@ INSERT INTO times (location, day, open, close) VALUES
 -- Dummy food types...
 -- If these are to be handled individually when rendering, perhaps it might
 -- be best to replace these with canonical data?
-INSERT INTO food_types (name, description, classes) VALUES
-   ('Fresh Vegetables', 'Various fresh vegetables', ARRAY['veg']),
-   ('Canned Goods', 'Canned food items', ARRAY['canned']),
+INSERT INTO food_types (id, name, description, meta) VALUES
+   ('fresh_veg', 'Fresh Vegetables', 'Various fresh vegetables', '{}'),
+   ('canned', 'Canned Goods', 'Canned food items', '{}'),
    -- TODO: perhaps add additional umbrella classes? 'religious', 'restriction', etc..?
-   ('Halal', 'Halal-certified food items', ARRAY['halal','dietary']),
-   ('Vegan', 'Plant-based food items', ARRAY['vegan','dietary']);
+   ('halal', 'Halal', 'Halal-certified food items', '{}'),
+   ('vegan', 'Vegan', 'Plant-based food items', '{"class":"dietary"}');
 
 
 -- Dummy data attaching rough food type labels to locations/shops
 INSERT INTO location_food_types (location, food_type) VALUES
-   (1, 1),
-   (1, 4),
-   (2, 1),
-   (3, 3),
-   (4, 1),
-   (4, 3);
+   (1, 'fresh_veg'),
+   (1, 'vegan'),
+   (2, 'fresh_veg'),
+   (3, 'halal'),
+   (4, 'fresh_veg'),
+   (4, 'halal');
