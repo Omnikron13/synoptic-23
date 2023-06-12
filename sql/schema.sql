@@ -42,7 +42,7 @@ DROP TABLE IF EXISTS location_food_types CASCADE;
 CREATE TABLE IF NOT EXISTS locations(
    id SERIAL PRIMARY KEY,
    name
-      VARCHAR(255)
+      TEXT
       UNIQUE
       NOT NULL
       CHECK(not_blank(name))
