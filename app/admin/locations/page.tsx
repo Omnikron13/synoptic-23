@@ -75,6 +75,23 @@ function LocationComponent({ id, name, description }) {
    );
 }
 
+
+function HGeoComponent({ lat, lng }) {
+   const nf = new Intl.NumberFormat('en-GB', {
+      // Supposedly accurate to ~1.11m (dropping to 4dp is apparently ~11.1m)
+      maximumFractionDigits: 5,
+   });
+
+   return(
+      <p className={classnames('coords', 'h-geo', styles.coords)}>
+         <a href={`geo:${lat},${lng}`}>
+            <data className='p-latitude'  value={lat}>{nf.format(lat)}</data>
+            <data className='p-longitude' value={lng}>{nf.format(lng)}</data>
+         </a>
+      </p>
+   );
+}
+
 // TODO: h-geo microformat component.
 // See: http://microformats.org/wiki/h-geo
 
