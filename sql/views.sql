@@ -5,7 +5,7 @@ WITH
    times_agg AS (
       SELECT
          location,
-         array_agg(json_build_object('day', dow_name(day), 'open', open, 'close', close))
+         json_agg(json_build_object('day', dow_name(day), 'open', open, 'close', close))
             AS json
       FROM times
       GROUP BY location
@@ -15,7 +15,7 @@ WITH
    food_type_agg AS (
       SELECT
          location,
-         array_agg(row_to_json(food_types))
+         json_agg(row_to_json(food_types))
             AS json
       FROM location_food_types
       JOIN food_types
