@@ -96,8 +96,6 @@ function HGeoComponent({ lat, lng }) {
    );
 }
 
-// TODO: h-geo microformat component.
-// See: http://microformats.org/wiki/h-geo
 
 // TODO: TimesListComponent
 
