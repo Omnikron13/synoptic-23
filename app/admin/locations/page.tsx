@@ -57,8 +57,6 @@ export default function Page() {
 
             <LocationComponent {...loc} />
          </ul>
-
-         <pre>{JSON.stringify(loc, null, 3)}</pre>
       </>
    );
 }
