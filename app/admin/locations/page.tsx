@@ -55,7 +55,7 @@ export default function Page() {
                </ul>
             </li>
 
-            <LocationComponent {...loc} />
+            {locs.map(l => <LocationComponent {...l} />)}
          </ul>
       </>
    );
