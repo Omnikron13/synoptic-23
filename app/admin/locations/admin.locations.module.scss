@@ -21,22 +21,22 @@
    grid-template-rows: min-content min-content 1fr min-content;
    justify-items: stretch;
 
+   & > .name {
+      background-color: #323;
+      grid-area: header;
+   }
+
+   & > .description {
+      background-color: #231;
+      grid-area: left_m;
+   }
+
    & > h3, p {
       margin: 0;
    }
 
    & > * {
    }
-}
-
-.name {
-   background-color: #323;
-   grid-area: header;
-}
-
-.description {
-   background-color: #231;
-   grid-area: left_m;
 }
 
 .coords {
