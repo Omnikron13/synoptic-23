@@ -64,7 +64,7 @@ export default function Page() {
 }
 
 
-function LocationComponent({ id, name, description, coords, times }) {
+function LocationComponent({ id, name, description, coords, times, food_types }) {
    return(
       <li className={classnames('location', styles.location)}>
          <h3 className={classnames('name', styles.name)}>{name}</h3>
@@ -75,7 +75,7 @@ function LocationComponent({ id, name, description, coords, times }) {
 
          <TimesListComponent times={times} />
 
-         {/* TODO: fill out food_types components */}
+         <FoodTypesListComponent food_types={food_types} />
       </li>
    );
 }
