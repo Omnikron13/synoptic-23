@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import db from '/db.js';
+import db from 'db';
 
 export default class FoodType {
    id: string;

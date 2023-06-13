@@ -1,4 +1,4 @@
-import db from '/db.js';
+import db from 'db';
 import * as model from 'Location';
 
 export const metadata = {
