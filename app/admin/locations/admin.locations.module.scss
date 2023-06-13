@@ -1,3 +1,5 @@
+@use 'styles/media' as m;
+
 .locationsList, .timesList, .foodTypesList {
    display: flex;
    flex-direction: column;
