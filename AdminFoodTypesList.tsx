@@ -16,8 +16,9 @@ export default function AdminFoodTypesList({ data = [] }) {
    );
 
    return(
-      <ul>
+      <ul className={styles.adminFoodTypesList}>
          <input
+            className={styles.filter}
             value={filterStr}
             placeholder='Filter...'
             onChange={e => setFilterStr(e.target.value.toLowerCase())}
@@ -29,13 +30,13 @@ export default function AdminFoodTypesList({ data = [] }) {
 
 function FoodTypeEditor({ id, name, description, meta, mark = '' }) {
    return(
-      <li>
+      <li className={styles.foodTypeEditor}>
          <hgroup>
-            <h2 className='name'><MarkedText text={name} pattern={mark} /></h2>
-            <p className='id'><MarkedText text={id} pattern={mark} /></p>
+            <h2 className={styles.name}><MarkedText text={name} pattern={mark} /></h2>
+            <p className={styles.id}>ID : <MarkedText text={id} pattern={mark} /></p>
          </hgroup>
-         <p className='description'><MarkedText text={description} pattern={mark} /></p>
-         <p className='meta'>{JSON.stringify(meta)}</p>
+         <p className={styles.description}><MarkedText text={description} pattern={mark} /></p>
+         <p className={styles.meta}>{JSON.stringify(meta)}</p>
       </li>
    );
 }
