@@ -1,0 +1,21 @@
+/* Mobile (portrait) or other narrow screen styles */
+$breakpoint-phone: 500px
+
+/*  */
+$breakpoint-phone-landscape: 1000px
+
+@mixin onMobile
+   @media screen and (max-width: $breakpoint-phone + 20px)
+      @content
+
+@mixin notMobile
+   @media screen and (min-width: $breakpoint-phone - 20px)
+      @content
+
+@mixin landscape
+   @media screen and (max-width: $breakpoint-phone-landscape + 20px)
+      @content
+
+@mixin notLandscape
+   @media screen and (min-width: $breakpoint-phone-landscape - 20px)
+      @content

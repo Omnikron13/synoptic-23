@@ -1,4 +1,4 @@
-import db from '/db.js';
+import db from 'db';
 import FoodType from '/FoodType.tsx';
 
 async function construct(obj: Location): Promise<Location> {

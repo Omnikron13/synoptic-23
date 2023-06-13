@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import db from '/db.js';
+import db from 'db';
 
 export default class FoodType {
    id: string;
@@ -22,14 +22,6 @@ export default class FoodType {
    }
 }
 
-function construct(obj): FoodType {
-   return {
-      id: obj.id,
-      name: obj.name,
-      description: obj.description,
-      classes: obj.classes,
-   };
-}
 
 export async function get(id: string) : Promise<FoodType> {
    const res = await db.query('SELECT * FROM food_types WHERE id = $1', [id]);
