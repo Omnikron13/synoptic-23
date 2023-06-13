@@ -10,8 +10,6 @@ import styles from './admin.locations.module.scss';
 const locs = await getAllLocations();
 
 export default function Page() {
-   const loc = locs[0];
-
    return(
       <>
          <h2>Locations</h2>
