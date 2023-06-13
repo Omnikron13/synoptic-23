@@ -9,7 +9,7 @@ html {
 }
 
 body {
-   @include m.notMobile {
+   @include m.notLandscape {
       margin: 2rem 12rem 4rem;
    }
 }
