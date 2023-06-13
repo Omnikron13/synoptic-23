@@ -72,9 +72,9 @@ function TimeComponent({ day, open, close }) {
       <li className={classnames('time', styles.time)}>
          <span className={styles.day}>{['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][day]}</span>
          <span className={classnames('range', styles.range)}>
-            <time className={styles.open} datetime={open}>{open.slice(0, -3)}</time>
+            <time className={styles.open} dateTime={open}>{open.slice(0, -3)}</time>
             <span className={styles.dash}>&ndash;</span>
-            <time className={styles.close} datetime={close}>{close.slice(0, -3)}</time>
+            <time className={styles.close} dateTime={close}>{close.slice(0, -3)}</time>
          </span>
       </li>
    );
