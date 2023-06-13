@@ -16,45 +16,6 @@ export default function Page() {
       <>
          <h2>Locations</h2>
          <ul className={classnames(styles.locationsList)}>
-            <li className={classnames('location', styles.location)}>
-               <h3 className={classnames('name', styles.name)}>{loc.name}</h3>
-
-               <p className={classnames('description', styles.description)}>{loc.description}</p>
-
-               <p className={classnames('coords', 'h-geo', styles.coords)}>
-                  <a href={`geo:${loc.coords.lat},${loc.coords.lng}`}>
-                     <data className='p-latitude'  value={loc.coords.lat}>{loc.coords.lat}</data>
-                     <data className='p-longitude' value={loc.coords.lng}>{loc.coords.lng}</data>
-                  </a>
-               </p>
-
-               <ol className={classnames('timesList', styles.timesList)}>
-                  <h3>Times</h3>
-                  <li className={classnames('times', styles.times)} key={loc.times[0].day}>
-                     {['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][loc.times[0].day]}
-                     {loc.times[0].open}
-                     {loc.times[0].close}
-                  </li>
-                  <li key={loc.times[1].day}>{['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][loc.times[1].day]} - {loc.times[1].open} - {loc.times[1].close}</li>
-                  <li key={loc.times[2].day}>{['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][loc.times[2].day]} - {loc.times[2].open} - {loc.times[2].close}</li>
-                  <li key={loc.times[3].day}>{['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][loc.times[3].day]} - {loc.times[3].open} - {loc.times[3].close}</li>
-                  <li key={loc.times[4].day}>{['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][loc.times[4].day]} - {loc.times[4].open} - {loc.times[4].close}</li>
-                  <li key={loc.times[5].day}>{['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][loc.times[5].day]} - {loc.times[5].open} - {loc.times[5].close}</li>
-               </ol>
-
-               <ul className={classnames('foodTypesList', styles.foodTypesList)}>
-                  <h3>Food types/categories</h3>
-                  <li className={classnames('foodType', styles.foodType, loc.food_types[0].id, loc.food_types[0].meta?.classes)}>
-                     <h4 className='name'>{loc.food_types[0].name} [{loc.food_types[0].id}]</h4>
-                     <p className='description'>{loc.food_types[0].description}</p>
-                  </li>
-                  <li className={classnames('foodType', styles.foodType, loc.food_types[1].id, loc.food_types[1].meta?.classes)}>
-                     <h4 className='name'>{loc.food_types[1].name} [{loc.food_types[1].id}]</h4>
-                     <p className='description'>{loc.food_types[1].description}</p>
-                  </li>
-               </ul>
-            </li>
-
             {locs.map(l => <LocationComponent {...l} />)}
          </ul>
       </>
