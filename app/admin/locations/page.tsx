@@ -5,7 +5,7 @@ import { getAll as getAllLocations } from 'Location';
 // JSON5 claims to fully mimic the JSON API, so in _theory_ it should be ok to shadow it
 const JSON = await import('json5');
 
-import styles from './admin.locations.module.scss';
+import styles from 'styles/admin.locations.module.scss';
 
 const locs = await getAllLocations();
 
