@@ -2,6 +2,8 @@
 import classnames from 'classnames';
 import { useState } from 'react';
 
+import styles from 'styles/foodtypes.admin.module.sass';
+
 
 export default function AdminFoodTypesList({ data = [] }) {
    const [typesList, setTypesList] = useState(data);
