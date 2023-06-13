@@ -101,7 +101,7 @@ function TimesListComponent({ times }) {
    return(
       <ol className={classnames('timesList', styles.timesList)}>
          <h3>Times</h3>
-         {times.map(t => <TimeComponent key={t.day} {...t} />)}
+         {times?.map(t => <TimeComponent key={t.day} {...t} />)}
       </ol>
    );
 }
@@ -126,7 +126,7 @@ function FoodTypesListComponent({ food_types }) {
    return(
       <ul className={classnames('foodTypesList', styles.foodTypesList)}>
          <h3>Food types/categories</h3>
-         {food_types.map(ft => <FoodTypeComponent key={ft.id} {...ft} />)}
+         {food_types?.map(ft => <FoodTypeComponent key={ft.id} {...ft} />)}
       </ul>
    );
 }
