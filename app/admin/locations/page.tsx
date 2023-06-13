@@ -94,8 +94,8 @@ function FoodTypesListComponent({ food_types }) {
 function FoodTypeComponent({ id, name, description, meta }) {
    return(
       <li className={classnames('foodType', styles.foodType, id, meta?.classes)}>
-         <h4 className={'name', styles.name}>{name} [{id}]</h4>
-         <p className={'description', styles.description}>{description}</p>
+         <h4 className={classnames('name', styles.name)}>{name} [{id}]</h4>
+         <p className={classnames('description', styles.description)}>{description}</p>
       </li>
    );
 }
