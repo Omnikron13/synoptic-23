@@ -123,6 +123,22 @@ function TimeComponent({ day, open, close }) {
    );
 }
 
-// TODO: FoodTypeListComponent
 
-// TODO: FoodTypeComponent
+function FoodTypesListComponent({ food_types }) {
+   return(
+      <ul className={classnames('foodTypesList', styles.foodTypesList)}>
+         <h3>Food types/categories</h3>
+         {food_types.map(ft => <FoodTypeComponent key={ft.id} {...ft} />)}
+      </ul>
+   );
+}
+
+
+function FoodTypeComponent({ id, name, description, meta }) {
+   return(
+      <li className={classnames('foodType', styles.foodType, id, meta?.classes)}>
+         <h4 className={'name', styles.name}>{name} [{id}]</h4>
+         <p className={'description', styles.description}>{description}</p>
+      </li>
+   );
+}
