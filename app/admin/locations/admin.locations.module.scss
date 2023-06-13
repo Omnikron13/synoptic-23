@@ -20,6 +20,7 @@
    grid-template-columns: 2fr 3fr 1fr;
    grid-template-rows: min-content min-content 1fr min-content;
    justify-items: stretch;
+   min-height: 10rem;
 
    & > .name {
       background-color: #323;
