@@ -19,8 +19,9 @@ export function ClientComponents({ locations }) {
          return;
       }
       // If there _is_ one, we should sort the list of locations by distance
-      // TODO: either fetch from the API and let PostGIS do a rough sort, or
-      // query the distance matrix api thing from google maps.
+      fetch(`/api/locations?start=${geo.lat},${geo.lng}`)
+         .then(res => res.json())
+         .then(data => setLocationList(data));
    }, [geo]);
 
 
