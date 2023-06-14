@@ -1,4 +1,4 @@
-import Map from './Map';
+import Map from 'component/Map';
 import * as Location from 'Location';
 
 export const metadata = {
