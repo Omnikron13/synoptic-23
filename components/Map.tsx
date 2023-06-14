@@ -40,6 +40,7 @@ function Map({ children }) {
       </GoogleMap>
    ) : <></>
 }
+export default memo(Map);
 
 export function LocationMarker({ name, coords }) {
    return(
@@ -60,6 +61,3 @@ export function UserMarker({ coords }) {
       />
    );
 }
-
-export default memo(Map);
-
