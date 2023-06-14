@@ -1,5 +1,8 @@
 import Map from 'components/Map';
+import { LocationMarker } from 'components/Map';
 import * as Location from 'Location';
+
+import styles from 'styles/map.module.sass';
 
 export const metadata = {
    title: 'Map Page Title',
@@ -11,7 +14,11 @@ export default async function Page() {
 
    return <>
       <h1>Map Test Page</h1>
-      <Map locations={locs} />
+      <div className={styles.mapContainer}>
+         <Map>
+            {locs.map(l => <LocationMarker {...l} />)}
+         </Map>
+      </div>
    </>;
 }
 

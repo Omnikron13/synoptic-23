@@ -8,7 +8,7 @@ import {
 } from '@react-google-maps/api';
 
 
-function Map({ locations }) {
+function Map({ children }) {
    const { isLoaded } = useJsApiLoader({
       id: 'google-map-script',
       googleMapsApiKey: 'AIzaSyCXhK5ERNDL42X1HnIj8gFgMeNr0iKERiI',
@@ -16,7 +16,7 @@ function Map({ locations }) {
 
    const [map, setMap] = useState(null);
 
-   const onLoad = useCallback(function callback(map) {
+   const onLoad = useCallback(map => {
       // TODO: not just blindly copy
       // Rough bounds of the Govan ward area we're interested in
       const sw = {lat: 55.846051295550666, lng: -4.35666360454672};
@@ -28,10 +28,7 @@ function Map({ locations }) {
       setMap(map);
    }, []);
 
-   const onUnmount = useCallback(function callback(map) {
-      setMap(null)
-   }, []);
-
+   const onUnmount = useCallback(map => setMap(null), []);
 
    return isLoaded ? (
       <GoogleMap
@@ -39,13 +36,12 @@ function Map({ locations }) {
          onLoad={onLoad}
          onUnmount={onUnmount}
       >
-         {/* TODO: better markers and shit, probably in their own component, should go here */}
-         {locations.map(l => <LocationMarker {...l} />)}
+         {children}
       </GoogleMap>
    ) : <></>
 }
 
-function LocationMarker({ name, coords }) {
+export function LocationMarker({ name, coords }) {
    return(
       <Marker
          position={coords}
