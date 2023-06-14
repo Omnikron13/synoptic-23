@@ -5,7 +5,6 @@ export async function GET(req) {
    let data = await getAll();
    if(req.nextUrl.searchParams.get('start')) {
       const matrix = await fetchDistanceMatrix(req.nextUrl.searchParams.get('start'), data);
-      console.log('MATRIX:', matrix.rows[0].elements);
       data = data
          .map((l, i) => ({...l, distance: matrix.rows[0].elements[i].distance}))
          .sort((a, b) => a.distance.value - b.distance.value);
@@ -22,7 +21,6 @@ async function fetchDistanceMatrix(userCoords, locations) {
       units: 'metric',
       key: apiKey,
    });
-   console.log('URL PARAMS:', params.toString());
    const res = await fetch(url + params);
    return res.json();
 }
