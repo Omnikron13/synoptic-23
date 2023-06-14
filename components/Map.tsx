@@ -51,5 +51,15 @@ export function LocationMarker({ name, coords }) {
    );
 }
 
+export function UserMarker({ coords }) {
+   return(
+      <Marker
+         position={coords}
+         title='You are here'
+         label='😀'
+      />
+   );
+}
+
 export default memo(Map);
 
