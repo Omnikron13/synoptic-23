@@ -1,4 +1,4 @@
-import Map from './Map.jsx';
+import Map from './Map';
 import * as Location from 'Location';
 
 export const metadata = {

@@ -1,4 +1,4 @@
-import styles from '../styles/main.scss';
+import 'styles/main.sass';
 
 export default function RootLayout({ children }) {
    return (
