@@ -12,13 +12,15 @@ export default async function Page() {
    // TODO: replace this with some kind of state in the real app
    const locs = await Location.getAll();
 
-   return <>
-      <h1>Map Test Page</h1>
-      <div className={styles.mapContainer}>
-         <Map>
-            {locs.map(l => <LocationMarker {...l} />)}
-         </Map>
-      </div>
-   </>;
+   return(
+      <body className={styles.body}>
+         <h1>Map Test Page</h1>
+         <div className={styles.mapContainer}>
+            <Map>
+               {locs.map(l => <LocationMarker {...l} />)}
+            </Map>
+         </div>
+      </body>
+   );
 }
 
