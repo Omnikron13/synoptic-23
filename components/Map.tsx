@@ -7,10 +7,6 @@ import {
    Marker,
 } from '@react-google-maps/api';
 
-const containerStyle = {
-   width: '80rem',
-   height: '40rem'
-};
 
 function Map({ locations }) {
    const { isLoaded } = useJsApiLoader({
@@ -39,7 +35,7 @@ function Map({ locations }) {
 
    return isLoaded ? (
       <GoogleMap
-         mapContainerStyle={containerStyle} // TODO: style this properly with CSS
+         mapContainerStyle={{width: '100%', height: '100%'}}
          onLoad={onLoad}
          onUnmount={onUnmount}
       >
