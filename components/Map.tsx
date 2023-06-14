@@ -40,9 +40,19 @@ function Map({ locations }) {
          onUnmount={onUnmount}
       >
          {/* TODO: better markers and shit, probably in their own component, should go here */}
-         {locations.map(l => <Marker position={l.coords} title={l.name} label='☭' />)}
+         {locations.map(l => <LocationMarker {...l} />)}
       </GoogleMap>
    ) : <></>
+}
+
+function LocationMarker({ name, coords }) {
+   return(
+      <Marker
+         position={coords}
+         title={name}
+         label='☭'
+      />
+   );
 }
 
 export default memo(Map);
