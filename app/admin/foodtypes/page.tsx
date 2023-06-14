@@ -12,9 +12,9 @@ import AdminFoodTypesList from 'AdminFoodTypesList';
 // Page entrypoint
 export default async function Page() {
    return(
-      <>
+      <body>
          <h2>FoodTypes</h2>
          <AdminFoodTypesList data={await getAllFoodTypes()} />
-      </>
+      </body>
    );
 }
