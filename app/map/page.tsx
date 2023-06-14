@@ -1,6 +1,5 @@
-import Map from 'components/Map';
-import { LocationMarker } from 'components/Map';
 import * as Location from 'Location';
+import { ClientComponents } from './components';
 
 import styles from 'styles/map.module.sass';
 
@@ -15,11 +14,7 @@ export default async function Page() {
    return(
       <body className={styles.body}>
          <h1>Map Test Page</h1>
-         <div className={styles.mapContainer}>
-            <Map>
-               {locs.map(l => <LocationMarker {...l} />)}
-            </Map>
-         </div>
+         <ClientComponents locations={locs} />
       </body>
    );
 }
