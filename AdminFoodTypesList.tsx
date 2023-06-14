@@ -1,6 +1,7 @@
 'use client';
 import classnames from 'classnames';
 import { useState } from 'react';
+import MarkedText from 'components/MarkedText';
 
 import styles from 'styles/foodtypes.admin.module.sass';
 
@@ -39,10 +40,4 @@ function FoodTypeEditor({ id, name, description, meta, mark = '' }) {
          <p className={styles.meta}>{JSON.stringify(meta)}</p>
       </li>
    );
-}
-
-function MarkedText({ text, pattern }) {
-   return pattern == '' ? text :
-      text.split(new RegExp(`(${pattern})`, 'gi'))
-          .map((s, i) => i % 2 ? <mark key={i}>{s}</mark> : s);
 }
