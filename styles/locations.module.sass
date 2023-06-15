@@ -14,23 +14,30 @@
   display: flex
   align-items: baseline
   flex-wrap: wrap
-  > p
+  > .distance
     font-size: 0.9rem
     margin: 0
 
+.label
+   display: inline-block
+   width: 1.4rem
+   height: 1.4rem
+   text-align: center
+   vertical-align: middle
+   background-color: #ea4335
+   color: #fff
+   font-family: Arial, sans-serif
+   font-weight: normal
+   border-radius: 50%
+   text-shadow: 0.0rem 0.0rem 0.5rem #000
+   margin: 0
+   font-size: 1.2rem
+   margin-right: 0.25rem
+
 .name
-   grid-area: h
    margin: 0
    font-size: 1.2rem
    font-weight: bold
-   > .label
-      background-color: #ea4335
-      color: #fff
-      font-family: Arial, sans-serif
-      font-weight: normal
-      border-radius: 50%
-      padding: 0 0.25rem
-      text-shadow: 0.0rem 0.0rem 0.5rem #000
 
 .description
    grid-area: c
