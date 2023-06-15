@@ -42,12 +42,12 @@ function Map({ children }) {
 }
 export default memo(Map);
 
-export function LocationMarker({ name, coords }) {
+export function LocationMarker({ name, coords, label }) {
    return(
       <Marker
          position={coords}
          title={name}
-         label={{text: 'A', color: 'white'}}
+         label={{text: label, color: 'white'}}
       />
    );
 }

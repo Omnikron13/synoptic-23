@@ -32,6 +32,10 @@ export function ClientComponents({ locations, foodTypes }) {
    // TODO: make this less horrifying...
    const filteredLocationList = filter.length == 0 ? locationList : locationList.filter(l => l.food_types.some(ft => filter.includes(ft.id)));
 
+   // Add a unique label for _this particular_ filtered list
+   // TODO: this would need to be fixed for > 26 shops
+   const labelledLocationList = filteredLocationList.map((l, i) => ({...l, label: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[i % 26]}));
+
 
    return <>
       <header className={styles.header}>
@@ -47,23 +51,23 @@ export function ClientComponents({ locations, foodTypes }) {
          </details>
 
          <ol className={styles.locationList}>
-            {filteredLocationList.map((l, i) => <Location key={i} {...l} />)}
+            {labelledLocationList.map((l, i) => <Location key={i} {...l} />)}
          </ol>
       </main>
 
       <div className={styles.mapContainer}>
          <Map>
             {geo && <UserMarker coords={geo} />}
-            {filteredLocationList.map((l, i) => <LocationMarker key={i} {...l} />)}
+            {labelledLocationList.map((l, i) => <LocationMarker key={i} {...l} />)}
          </Map>
       </div>
    </>;
 }
 
-function Location({ name, description, times, food_types }) {
+function Location({ name, description, times, food_types, label }) {
    return(
       <li className={locationStyles.location}>
-         <h3 className={locationStyles.name}>{name}</h3>
+         <h3 className={locationStyles.name}><span className={locationStyles.label}>{label}</span> {name}</h3>
          <p className={locationStyles.description}>{description}</p>
          <ol className={locationStyles.timesList}>
             <h4>Times</h4>
