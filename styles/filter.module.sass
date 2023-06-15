@@ -1,0 +1,26 @@
+.foodTypeList
+   list-style: none
+   padding: 0
+   display: flex
+   flex-wrap: wrap
+   gap: 0.5rem
+
+.foodType
+   border: 1px solid #ccc
+   //height: 4rem
+   padding: 0.5rem
+   display: grid
+   grid-template-areas: "icon name" "icon description"
+   & .name, .description, .icon
+      margin: 0
+   & .name
+      grid-area: name
+   & .description
+      grid-area: description
+   & .icon
+      grid-area: icon
+      font-size: 2rem
+      margin-right: 0.5rem
+   &.selected
+      background-color: #ac8
+      color: #222
