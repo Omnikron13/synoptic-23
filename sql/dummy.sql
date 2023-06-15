@@ -1,4 +1,4 @@
---- Clear tables
+-- Clear tables
 DELETE FROM locations_food_types;
 DELETE FROM food_types;
 DELETE FROM times;
@@ -8,22 +8,41 @@ DELETE FROM locations;
 \i sql/views.sql
 
 -- Dummy data for locations/shops table
-INSERT INTO locations (name, description, lat, long) VALUES
-   ('Shop A', 'This is shop A', 55.863335210385820, -4.315243338367801),
-   ('Shop B', 'This is shop B', 55.863813962452355, -4.302852580455955),
-   ('Shop C', 'This is shop C', 55.859507108009105, -4.307653191840376),
-   ('Shop D', 'This is shop D', 55.864219200178430, -4.311974401759780),
-   ('Tesco', 'Its a Tescos', 55.849519200178430, -4.3017746401759780),
-   ('Shop E', 'This is shop E', 55.860234567890123, -4.301876543210987),
-   ('Shop F', 'This is shop F', 55.867345678901234, -4.310765432109876),
-   ('Shop G', 'This is shop G', 55.863456789012345, -4.304654321098765),
-   ('Shop H', 'This is shop H', 55.891067890123456, -4.206543210987654),
-   ('Shop I', 'This is shop I', 55.865678901234567, -4.309432109876543),
-   ('Shop J', 'This is shop J', 55.862789012345678, -4.302321098765432),
-   ('Shop K', 'This is shop K', 55.819290123456789, -4.303210987654321),
-   ('Shop L', 'This is shop L', 55.868901234567890, -4.202109876543210),
-   ('Shop M', 'This is shop M', 55.769012345678901, -4.305098765432109),
-   ('Shop N', 'This is shop N', 55.840123456789012, -4.312987654321098);
+--INSERT INTO locations (name, description, lat, long) VALUES
+--   ('Shop A', 'This is shop A', 55.863335210385820, -4.315243338367801),
+--   ('Shop B', 'This is shop B', 55.863813962452355, -4.302852580455955),
+--   ('Shop C', 'This is shop C', 55.859507108009105, -4.307653191840376),
+--   ('Shop D', 'This is shop D', 55.864219200178430, -4.311974401759780),
+--   ('Tesco', 'Its a Tescos', 55.849519200178430, -4.3017746401759780),
+--   ('Shop E', 'This is shop E', 55.860234567890123, -4.301876543210987),
+--   ('Shop F', 'This is shop F', 55.867345678901234, -4.310765432109876),
+--   ('Shop G', 'This is shop G', 55.863456789012345, -4.304654321098765),
+--   ('Shop H', 'This is shop H', 55.891067890123456, -4.206543210987654),
+--   ('Shop I', 'This is shop I', 55.865678901234567, -4.309432109876543),
+--   ('Shop J', 'This is shop J', 55.862789012345678, -4.302321098765432),
+--   ('Shop K', 'This is shop K', 55.819290123456789, -4.303210987654321),
+--   ('Shop L', 'This is shop L', 55.868901234567890, -4.202109876543210),
+--   ('Shop M', 'This is shop M', 55.769012345678901, -4.305098765432109),
+--   ('Shop N', 'This is shop N', 55.840123456789012, -4.312987654321098);
+
+
+-- 'Realistic' data for locations/shops table, courtesy of ChatGPT
+INSERT INTO locations (id, name, description, lat, long) VALUES
+    (1, 'Mom''s Deli', 'A cozy corner shop offering homemade sandwiches and fresh pastries.', 55.863335210385820, -4.315243338367801),
+    (2, 'Raja''s Spices', 'An immigrant-run food shop providing a wide range of authentic spices and ingredients.', 55.863813962452355, -4.302852580455955),
+    (3, 'La Panadería', 'A family-owned bakery specializing in traditional bread and pastries.', 55.859507108009105, -4.307653191840376),
+    (4, 'Green Grocer', 'A small local grocery store offering a variety of fresh fruits, vegetables, and organic products.', 55.864219200178430, -4.311974401759780),
+    (5, 'Tesco Express', 'A convenient supermarket chain with a wide selection of groceries and household items.', 55.849519200178430, -4.3017746401759780),
+    (6, 'The Spice House', 'A hidden gem for spice lovers, offering an extensive collection of aromatic spices from around the world.', 55.855313, -4.307188),
+    (7, 'Asian Food Mart', 'A diverse food market showcasing the flavors of Asia with a range of imported ingredients and snacks.', 55.864681, -4.344796),
+    (8, 'The Corner Store', 'A neighborhood shop where you can find everyday essentials, snacks, and friendly service.', 55.853286, -4.326875),
+    (9, 'Mama Mia Pizzeria', 'An Italian-inspired pizzeria serving delicious wood-fired pizzas made with love.', 55.852193, -4.344590),
+    (10, 'Little India Grocery', 'An Indian grocery store offering a rich assortment of spices, lentils, and traditional Indian products.', 55.872547, -4.332872),
+    (11, 'Café de Paris', 'A charming café with a French touch, serving freshly brewed coffee, pastries, and light bites.', 55.857970, -4.327939),
+    (12, 'Le Petit Boulanger', 'A petite bakery specializing in artisanal bread, croissants, and other French delicacies.', 55.856621, -4.315837),
+    (13, 'The Tea Emporium', 'A cozy tea shop with a vast selection of loose-leaf teas from around the world.', 55.854983, -4.286869),
+    (14, 'Sunshine Market', 'A family-owned grocery store providing fresh produce, local goods, and friendly service.', 55.861580, -4.287435),
+    (15, 'Spice of Life', 'A vibrant store offering a colorful array of spices, herbs, and exotic ingredients for adventurous cooks.', 55.863658, -4.319892);
 
 
 -- Dummy data for opening times table
