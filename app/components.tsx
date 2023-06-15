@@ -39,7 +39,7 @@ export function ClientComponents({ locations, foodTypes }) {
 
    return <>
       <header className={styles.header}>
-         <h1>Map Test Page</h1>
+         <h1>Surplus Food Finder Prototype</h1>
          <button onClick={() => setGeo({lat: 55.860555, lng: -4.324892})}>Spoof GeoLoc</button>
       </header>
 
