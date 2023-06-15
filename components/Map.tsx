@@ -47,7 +47,7 @@ export function LocationMarker({ name, coords }) {
       <Marker
          position={coords}
          title={name}
-         label='☭'
+         label={{text: 'A', color: 'white'}}
       />
    );
 }
