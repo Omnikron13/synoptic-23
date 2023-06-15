@@ -36,11 +36,11 @@ INSERT INTO times (location, day, open, close) VALUES
 -- If these are to be handled individually when rendering, perhaps it might
 -- be best to replace these with canonical data?
 INSERT INTO food_types (id, name, description, meta) VALUES
-   ('fresh_veg', 'Fresh Vegetables', 'Various fresh vegetables', '{}'),
+   ('fresh_veg', 'Fresh Vegetables', 'Various fresh vegetables', '{"icon":"🥕"}'),
    ('canned', 'Canned Goods', 'Canned food items', '{}'),
    -- TODO: perhaps add additional umbrella classes? 'religious', 'restriction', etc..?
-   ('halal', 'Halal', 'Halal-certified food items', '{}'),
-   ('vegan', 'Vegan', 'Plant-based food items', '{"classes":["dietary"]}');
+   ('halal', 'Halal', 'Halal-certified food items', '{"icon":"☪️"}'),
+   ('vegan', 'Vegan', 'Plant-based food items', '{"icon":"🌱","classes":["dietary"]}');
 
 
 -- Dummy data attaching rough food type labels to locations/shops
