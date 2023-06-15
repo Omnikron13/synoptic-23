@@ -5,14 +5,17 @@ import MarkedText from 'components/MarkedText';
 
 import styles from 'styles/filter.module.sass';
 
-export default function Filter({ foodTypes }) {
-   return <FoodTypeFilter foodTypes={foodTypes} />;
-}
-
-function FoodTypeFilter({ foodTypes }) {
+export function StateComponent({ foodTypes }) {
    // TODO: lift this up to where it is actually useful
    const [filter, setFilter] = useState([]);
+   return <><Filter foodTypes={foodTypes} filter={filter} setFilter={setFilter} /></>;
+}
 
+export default function Filter({ foodTypes, filter, setFilter }) {
+   return <FoodTypeFilter foodTypes={foodTypes} filter={filter} setFilter={setFilter} />;
+}
+
+function FoodTypeFilter({ foodTypes, filter, setFilter }) {
    const [filterStr, setFilterStr] = useState('');
 
    const filteredFoodTypes = foodTypes.filter(ft =>
