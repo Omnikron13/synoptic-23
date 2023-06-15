@@ -2,7 +2,7 @@ import db from 'db';
 import * as model from 'Location';
 
 export const metadata = {
-   title: 'Locations Page Title',
+   title: 'Locations',
 };
 
 
