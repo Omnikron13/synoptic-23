@@ -5,7 +5,7 @@ import { ClientComponents } from './components';
 import styles from 'styles/map.module.sass';
 
 export const metadata = {
-   title: 'Map Page Title',
+   title: 'Map',
 };
  
 export default async function Page() {
