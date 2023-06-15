@@ -1,3 +1,12 @@
+--- Clear tables
+DELETE FROM locations_food_types;
+DELETE FROM food_types;
+DELETE FROM times;
+DELETE FROM locations;
+
+\i sql/schema.sql
+\i sql/views.sql
+
 -- Dummy data for locations/shops table
 INSERT INTO locations (name, description, lat, long) VALUES
    ('Shop A', 'This is shop A', 55.863335210385820, -4.315243338367801),
