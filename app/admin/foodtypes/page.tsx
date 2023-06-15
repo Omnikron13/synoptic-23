@@ -7,7 +7,7 @@ const JSON = await import('json5');
 
 import styles from 'styles/foodtypes.admin.module.sass';
 
-import AdminFoodTypesList from 'AdminFoodTypesList';
+import AdminFoodTypesList from 'components/AdminFoodTypesList';
 
 export const metadata = {
    title: 'FoodTypes',
