@@ -5,6 +5,7 @@ import { LocationMarker, UserMarker } from 'components/Map';
 import Filter from 'components/Filter';
 
 import styles from 'styles/map.module.sass';
+import locationStyles from 'styles/locations.module.sass';
 
 export function ClientComponents({ locations, foodTypes }) {
    const [locationList, setLocationList] = useState(locations);
@@ -48,4 +49,30 @@ export function ClientComponents({ locations, foodTypes }) {
          </Map>
       </div>
    </>;
+}
+
+function Location({ name, description, times, food_types }) {
+   return(
+      <li className={locationStyles.location}>
+         <h3 className={locationStyles.name}>{name}</h3>
+         <p className={locationStyles.description}>{description}</p>
+         <ol className={locationStyles.timesList}>
+            <h4>Times</h4>
+            {times?.map(t =><li key={t.day}>
+               <span className={locationStyles.day}>{['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][t.day]}</span>
+               <span className={locationStyles.range}>
+                  <time className={locationStyles.open} dateTime={t.open}>{t.open.slice(0, -3)}</time>
+                  <span className={locationStyles.dash}>&ndash;</span>
+                  <time className={locationStyles.close} dateTime={t.close}>{t.close.slice(0, -3)}</time>
+               </span>
+            </li>)}
+         </ol>
+         <ul className={locationStyles.foodTypesList}>
+            {food_types?.map(ft => <li key={ft.id}>
+               {ft.meta.icon && <span className={locationStyles.icon}>{ft.meta.icon}</span>}
+               {ft.name}
+            </li>)}
+         </ul>
+      </li>
+   );
 }
