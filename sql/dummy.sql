@@ -125,10 +125,10 @@ INSERT INTO times (location, day, open, close) VALUES
 INSERT INTO food_types (id, name, description, meta) VALUES
    ('fresh_veg', 'Fresh Vegetables', 'Various fresh vegetables', '{"icon":"🥕"}'),
    ('canned', 'Canned Goods', 'Canned food items', '{"icon":"🥫"}'),
-   ('dairy', 'Dairy', 'Dairy items like milk, yogurt, cream', '{}'),
-   ('fresh_fruit', 'Fruit', 'Fresh fruit produce', '{}'),
-   ('frozen', 'Frozen', 'Frozen items', '{}'),
-   ('toiletries', 'Toiletries', 'Toiletries', '{}'),
+   ('dairy', 'Dairy', 'Dairy items like milk, yogurt, cream', '{"icon":"🐄"}'),
+   ('fresh_fruit', 'Fruit', 'Fresh fruit produce', '{"icon":"🍌"}'),
+   ('frozen', 'Frozen', 'Frozen items', '{"icon":"❄️"}'),
+   ('toiletries', 'Toiletries', 'Toiletries', '{"icon":"🧻"}'),
    ('halal', 'Halal', 'Halal-certified food items', '{"icon":"☪️"}'),
    ('vegan', 'Vegan', 'Plant-based food items', '{"icon":"🌱","classes":["dietary"]}');
 
