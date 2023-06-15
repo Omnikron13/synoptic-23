@@ -34,7 +34,6 @@ function FoodTypeFilter({ foodTypes }) {
                   key={ft.id}
                   {...ft}
                   mark={filterStr}
-                  selected={false}
                   filter={filter}
                   setFilter={setFilter}
                />
