@@ -63,10 +63,13 @@ export function ClientComponents({ locations, foodTypes }) {
    </>;
 }
 
-function Location({ name, description, times, food_types, label }) {
+function Location({ name, description, times, food_types, label, distance }) {
    return(
       <li className={locationStyles.location}>
-         <h3 className={locationStyles.name}><span className={locationStyles.label}>{label}</span> {name}</h3>
+         <header className={locationStyles.header}>
+            <h3 className={locationStyles.name}><span className={locationStyles.label}>{label}</span> {name}</h3>
+            {distance && <p>&nbsp;&ndash; {distance.text}</p>}
+         </header>
          <p className={locationStyles.description}>{description}</p>
          <ol className={locationStyles.timesList}>
             <h4>Times</h4>
