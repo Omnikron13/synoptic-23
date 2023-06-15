@@ -9,6 +9,10 @@ import styles from 'styles/locations.admin.module.scss';
 
 const locs = await getAllLocations();
 
+export const metadata = {
+   title: 'Locations',
+};
+
 export default function Page() {
    return(
       <>
