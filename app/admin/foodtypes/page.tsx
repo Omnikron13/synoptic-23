@@ -9,6 +9,10 @@ import styles from 'styles/foodtypes.admin.module.sass';
 
 import AdminFoodTypesList from 'AdminFoodTypesList';
 
+export const metadata = {
+   title: 'FoodTypes',
+};
+
 // Page entrypoint
 export default async function Page() {
    return(
