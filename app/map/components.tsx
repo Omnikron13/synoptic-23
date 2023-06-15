@@ -34,14 +34,23 @@ export function ClientComponents({ locations, foodTypes }) {
 
 
    return <>
-      {/* TODO: strip this debug output */ geo ? <p>{geo.lat}, {geo.lng}</p> : <p>no geo</p>}
-      <main>
+      <header className={styles.header}>
+         <h1>Map Test Page</h1>
+         {/* TODO: strip this debug output */ geo ? <p>{geo.lat}, {geo.lng}</p> : <p>no geo</p>}
          <button onClick={() => setGeo({lat: 55.860555, lng: -4.324892})}>Spoof GeoLoc</button>
+      </header>
 
-         <Filter foodTypes={foodTypes} filter={filter} setFilter={setFilter} />
+      <main className={styles.main}>
+         <details className={styles.filter}>
+            <summary>Filter</summary>
+            <Filter foodTypes={foodTypes} filter={filter} setFilter={setFilter} />
+         </details>
 
-         {filteredLocationList.map((l, i) => <p key={i}>{l.name}</p>)}
+         <ol className={styles.locationList}>
+            {filteredLocationList.map((l, i) => <Location key={i} {...l} />)}
+         </ol>
       </main>
+
       <div className={styles.mapContainer}>
          <Map>
             {geo && <UserMarker coords={geo} />}

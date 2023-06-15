@@ -14,7 +14,6 @@ export default async function Page() {
 
    return(
       <body className={styles.body}>
-         <h1>Map Test Page</h1>
          <ClientComponents locations={locs} foodTypes={await FoodType.getAll()} />
       </body>
    );
