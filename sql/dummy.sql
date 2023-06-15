@@ -124,7 +124,7 @@ INSERT INTO times (location, day, open, close) VALUES
 -- be best to replace these with canonical data?
 INSERT INTO food_types (id, name, description, meta) VALUES
    ('fresh_veg', 'Fresh Vegetables', 'Various fresh vegetables', '{"icon":"🥕"}'),
-   ('canned', 'Canned Goods', 'Canned food items', '{}'),
+   ('canned', 'Canned Goods', 'Canned food items', '{"icon":"🥫"}'),
    ('dairy', 'Dairy', 'Dairy items like milk, yogurt, cream', '{}'),
    ('fresh_fruit', 'Fruit', 'Fresh fruit produce', '{}'),
    ('frozen', 'Frozen', 'Frozen items', '{}'),
