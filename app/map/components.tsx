@@ -40,7 +40,6 @@ export function ClientComponents({ locations, foodTypes }) {
    return <>
       <header className={styles.header}>
          <h1>Map Test Page</h1>
-         {/* TODO: strip this debug output */ geo ? <p>{geo.lat}, {geo.lng}</p> : <p>no geo</p>}
          <button onClick={() => setGeo({lat: 55.860555, lng: -4.324892})}>Spoof GeoLoc</button>
       </header>
 
