@@ -33,6 +33,11 @@ function Map({ children }) {
    return isLoaded ? (
       <GoogleMap
          mapContainerStyle={{width: '100%', height: '100%'}}
+         clickableIcons={false}
+         options={{
+            disableDefaultUI: true,
+            gestureHandling: 'greedy',
+         }}
          onLoad={onLoad}
          onUnmount={onUnmount}
       >
